@@ -32,7 +32,7 @@
 			
 			//ブログ記事保存時に並び替え順序を保存
 			$("form#entry_form").submit(function(){
-			aaaaa
+			aaaaaaaa
 				//temp = "";
 				temp2 = "";
 				
