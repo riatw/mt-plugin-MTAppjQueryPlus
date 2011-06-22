@@ -2,8 +2,7 @@
 
 ## はじめに
 
-MTAppjQuerPlusは、「MTAppjQueryプラグイン」を元に独自に拡張をしたjQueryプラグイン集です。
-
+MTAppjQuerPlusは、「MTAppjQueryプラグイン」を元に独自に拡張をしたjQueryプラグイン集です。  
 MovableTypeをCMSとして運用する際の使い勝手の向上を目的としています。
 
 
@@ -19,24 +18,26 @@ MovableTypeをCMSとして運用する際の使い勝手の向上を目的とし
 1. 「MTAppjQueryプラグイン」をインストールします
 2. mt ディレクトリ直下の mt-static/plugins ディレクトリに MTAppjQueryPlus をアップロードします。
 3. user.jsの先頭に以下の記述を追加します
-　document.write('<script src="/mt/mt-static/plugins/MTAppjQueryPlus/jquery-ui-1.7.3.custom.min.js" type="text/javascript"></script> ');
-　document.write('<script src="/mt/mt-static/plugins/MTAppjQueryPlus/MTAppjQueryPlus.js" type="text/javascript"></script> ');
+
+	document.write('<script src="/mt/mt-static/plugins/MTAppjQueryPlus/jquery-ui-1.7.3.custom.min.js" type="text/javascript"></script> ');
+	document.write('<script src="/mt/mt-static/plugins/MTAppjQueryPlus/MTAppjQueryPlus.js" type="text/javascript"></script> ');
 
 
 ## 概要
 
 MTAppjQueryPlusは以下の6つの機能で構成されています。
-- ブログ記事アイテムの並び替え機能
+
++ ブログ記事アイテムの並び替え機能
 	$.MTAppEntryAssetsSort
-- ファイルのアップロード時のファイル名のバリデート
++ ファイルのアップロード時のファイル名のバリデート
 	$.MTAppUploadValidater
-- ブログ記事の並び替え機能
++ ブログ記事の並び替え機能
 	$.MTAppEntrySort
-- 増減可能なカスタムフィールド
++ 増減可能なカスタムフィールド
 	$.fn.MTAppTableConverter
-- 複数選択可能なカレンダーカスタムフィールド
++ 複数選択可能なカレンダーカスタムフィールド
 	$.fn.MTAppCalenderSelector
-- 自在にレイアウト可能なカスタムフィールド
++ 自在にレイアウト可能なカスタムフィールド
 	$.fn.MTAppMultiConverter
 
 
@@ -45,27 +46,32 @@ MTAppjQueryPlusは以下の6つの機能で構成されています。
 user.jsに以下の記述をすることで、使用することが可能です。
 必要に応じて、適用する画面をif等で分岐してください。
 
-・ブログ記事アイテムの並び替え機能
++ ブログ記事アイテムの並び替え機能
+
 	$.MTAppEntryAssetsSort();
-・ファイルのアップロード時のファイル名のバリデート
++ ファイルのアップロード時のファイル名のバリデート
+
 	$.MTAppUploadValidater();
-・ブログ記事の並び替え機能
++ ブログ記事の並び替え機能
+
 	$.MTAppEntrySort();
-・増減可能なカスタムフィールド
++ 増減可能なカスタムフィールド
+
 	$("#excerpt,#customfield_xxx").MTAppTableConverter({
 		colcnt:2, //列数
 		type:'textarea',	//text=単一行 textarea=複数行
 		thead:'<tr><th>項目</th><th>内容</th><th style="width:3em;"></th></tr>'
 		//thead=見出し
 	});
-・複数選択可能なカレンダーカスタムフィールド
++ 複数選択可能なカレンダーカスタムフィールド
+
 	$("#excerpt,#customfield_xxx").MTAppCalenderSelector();
-・自由にレイアウト可能なカスタムフィールド
++ 自由にレイアウト可能なカスタムフィールド
 
 
 ##注意事項
 
-・$.MTAppTableConverterは、複数行のテキストエリアに対してのみ使用可能です
++ $.MTAppTableConverterは、複数行のテキストエリアに対してのみ使用可能です
 
 
 ##$.MTAppTableConverterの出力方法
