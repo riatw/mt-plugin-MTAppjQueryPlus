@@ -2,7 +2,7 @@
 
 ## はじめに
 
-MTAppjQuerPlusは、「MTAppjQueryプラグイン[http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html]」を元に独自に拡張をしたjQueryプラグイン集です。  
+MTAppjQuerPlusは、「[MTAppjQueryプラグイン](http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html)」を元に独自に拡張をしたjQueryプラグイン集です。  
 MovableTypeをCMSとして運用する際の使い勝手の向上を目的としています。
 
 
@@ -10,12 +10,12 @@ MovableTypeをCMSとして運用する際の使い勝手の向上を目的とし
 
 + MovableType 5.0以降
 + MTAppjQuery最新版がインストールされた環境(単体では動作しません)
-+ Splitプラグイン[http://www.koikikukan.com/archives/2009/01/20-015555.php] がインストールされた環境
++ [Splitプラグイン](http://www.koikikukan.com/archives/2009/01/20-015555.php)がインストールされた環境
 
 
 ## インストール
 
-1. 「MTAppjQueryプラグイン[http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html]」をインストールします
+1. 「[MTAppjQueryプラグイン](http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html)」をインストールします
 2. mt ディレクトリ直下の mt-static/plugins ディレクトリに MTAppjQueryPlus をアップロードします。
 3. user.jsの先頭に以下の記述を追加します
 
