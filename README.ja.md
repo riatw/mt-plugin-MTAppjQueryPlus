@@ -2,7 +2,8 @@
 
 ## はじめに
 
-MTAppjQuerPlusは、「MTAppjQueryプラグイン」を元に独自に拡張をしたjQueryプラグイン集です。  
+MTAppjQuerPlusは、「MTAppjQueryプラグイン」を元に独自に拡張をしたjQueryプラグイン集です。
+
 MovableTypeをCMSとして運用する際の使い勝手の向上を目的としています。
 
 
@@ -15,7 +16,7 @@ MovableTypeをCMSとして運用する際の使い勝手の向上を目的とし
 
 ## インストール
 
-1.「MTAppjQueryプラグイン」をインストールします
+1. 「MTAppjQueryプラグイン」をインストールします
 2. mt ディレクトリ直下の mt-static/plugins ディレクトリに MTAppjQueryPlus をアップロードします。
 3. user.jsの先頭に以下の記述を追加します
 　document.write('<script src="/mt/mt-static/plugins/MTAppjQueryPlus/jquery-ui-1.7.3.custom.min.js" type="text/javascript"></script> ');
@@ -25,17 +26,17 @@ MovableTypeをCMSとして運用する際の使い勝手の向上を目的とし
 ## 概要
 
 MTAppjQueryPlusは以下の6つの機能で構成されています。
-・ブログ記事アイテムの並び替え機能
+- ブログ記事アイテムの並び替え機能
 	$.MTAppEntryAssetsSort
-・ファイルのアップロード時のファイル名のバリデート
+- ファイルのアップロード時のファイル名のバリデート
 	$.MTAppUploadValidater
-・ブログ記事の並び替え機能
+- ブログ記事の並び替え機能
 	$.MTAppEntrySort
-・増減可能なカスタムフィールド
+- 増減可能なカスタムフィールド
 	$.fn.MTAppTableConverter
-・複数選択可能なカレンダーカスタムフィールド
+- 複数選択可能なカレンダーカスタムフィールド
 	$.fn.MTAppCalenderSelector
-・自在にレイアウト可能なカスタムフィールド
+- 自在にレイアウト可能なカスタムフィールド
 	$.fn.MTAppMultiConverter
 
 
