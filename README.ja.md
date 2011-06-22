@@ -1,83 +1,83 @@
-# MTAppjQueryPlus �h�L�������g
+﻿# MTAppjQueryPlus ドキュメント
 
-## �͂��߂�
+## はじめに
 
-MTAppjQuerPlus�́A�uMTAppjQuery�v���O�C���v�����ɓƎ��Ɋg��������jQuery�v���O�C���W�ł��B
-MovableType��CMS�Ƃ��ĉ^�p����ۂ̎g������̌����ړI�Ƃ��Ă��܂��B
-
-
-## �����
-
-+MovableType 5.0�ȍ~
-+MTAppjQuery�ŐV�ł��C���X�g�[�����ꂽ��(�P�̂ł͓��삵�܂���)
-+Split�v���O�C�����C���X�g�[�����ꂽ��
+MTAppjQuerPlusは、「MTAppjQueryプラグイン」を元に独自に拡張をしたjQueryプラグイン集です。
+MovableTypeをCMSとして運用する際の使い勝手の向上を目的としています。
 
 
-## �C���X�g�[��
+## 動作環境
 
-1.�uMTAppjQuery�v���O�C���v���C���X�g�[�����܂�
-2. mt �f�B���N�g�������� mt-static/plugins �f�B���N�g���� MTAppjQueryPlus ���A�b�v���[�h���܂��B
-3. user.js�̐擪�Ɉȉ��̋L�q��ǉ����܂�
-�@document.write('<script src="/mt/mt-static/plugins/MTAppjQueryPlus/jquery-ui-1.7.3.custom.min.js" type="text/javascript"></script> ');
-�@document.write('<script src="/mt/mt-static/plugins/MTAppjQueryPlus/MTAppjQueryPlus.js" type="text/javascript"></script> ');
++MovableType 5.0以降
++MTAppjQuery最新版がインストールされた環境(単体では動作しません)
++Splitプラグインがインストールされた環境
 
 
-## �T�v
+## インストール
 
-MTAppjQueryPlus�͈ȉ���6�̋@�\�ō\������Ă��܂��B
-�E�u���O�L���A�C�e���̕��ёւ��@�\
+1.「MTAppjQueryプラグイン」をインストールします
+2. mt ディレクトリ直下の mt-static/plugins ディレクトリに MTAppjQueryPlus をアップロードします。
+3. user.jsの先頭に以下の記述を追加します
+　document.write('<script src="/mt/mt-static/plugins/MTAppjQueryPlus/jquery-ui-1.7.3.custom.min.js" type="text/javascript"></script> ');
+　document.write('<script src="/mt/mt-static/plugins/MTAppjQueryPlus/MTAppjQueryPlus.js" type="text/javascript"></script> ');
+
+
+## 概要
+
+MTAppjQueryPlusは以下の6つの機能で構成されています。
+・ブログ記事アイテムの並び替え機能
 	$.MTAppEntryAssetsSort
-�E�t�@�C���̃A�b�v���[�h���̃t�@�C�����̃o���f�[�g
+・ファイルのアップロード時のファイル名のバリデート
 	$.MTAppUploadValidater
-�E�u���O�L���̕��ёւ��@�\
+・ブログ記事の並び替え機能
 	$.MTAppEntrySort
-�E�����\�ȃJ�X�^���t�B�[���h
+・増減可能なカスタムフィールド
 	$.fn.MTAppTableConverter
-�E�����I���\�ȃJ�����_�[�J�X�^���t�B�[���h
+・複数選択可能なカレンダーカスタムフィールド
 	$.fn.MTAppCalenderSelector
-�E���݂Ƀ��C�A�E�g�\�ȃJ�X�^���t�B�[���h
+・自在にレイアウト可能なカスタムフィールド
 	$.fn.MTAppMultiConverter
 
 
-## �g�p���@
+## 使用方法
 
-user.js�Ɉȉ��̋L�q�����邱�ƂŁA�g�p���邱�Ƃ��\�ł��B
-�K�v�ɉ����āA�K�p�����ʂ�if���ŕ��򂵂Ă��������B
+user.jsに以下の記述をすることで、使用することが可能です。
+必要に応じて、適用する画面をif等で分岐してください。
 
-�E�u���O�L���A�C�e���̕��ёւ��@�\
+・ブログ記事アイテムの並び替え機能
 	$.MTAppEntryAssetsSort();
-�E�t�@�C���̃A�b�v���[�h���̃t�@�C�����̃o���f�[�g
+・ファイルのアップロード時のファイル名のバリデート
 	$.MTAppUploadValidater();
-�E�u���O�L���̕��ёւ��@�\
+・ブログ記事の並び替え機能
 	$.MTAppEntrySort();
-�E�����\�ȃJ�X�^���t�B�[���h
+・増減可能なカスタムフィールド
 	$("#excerpt,#customfield_xxx").MTAppTableConverter({
-		colcnt:2, //��
-		type:'textarea',	//text=�P��s textarea=�����s
-		thead:'<tr><th>����</th><th>���e</th><th style="width:3em;"></th></tr>'
-		//thead=���o��
+		colcnt:2, //列数
+		type:'textarea',	//text=単一行 textarea=複数行
+		thead:'<tr><th>項目</th><th>内容</th><th style="width:3em;"></th></tr>'
+		//thead=見出し
 	});
-�E�����I���\�ȃJ�����_�[�J�X�^���t�B�[���h
+・複数選択可能なカレンダーカスタムフィールド
 	$("#excerpt,#customfield_xxx").MTAppCalenderSelector();
-�E���R�Ƀ��C�A�E�g�\�ȃJ�X�^���t�B�[���h
+・自由にレイアウト可能なカスタムフィールド
 
 
-##���ӎ���
+##注意事項
 
-�E$.MTAppTableConverter�́A�����s�̃e�L�X�g�G���A�ɑ΂��Ă̂ݎg�p�\�ł�
+・$.MTAppTableConverterは、複数行のテキストエリアに対してのみ使用可能です
 
 
-##$.MTAppTableConverter�̏o�͕��@
+##$.MTAppTableConverterの出力方法
 
-$.MTAppTableConverter���g�p�����ꍇ�A1�̃J�X�^���t�B�[���h�Ɂu##�v��
-��؂蕶���Ƃ��đ��������t�B�[���h�S�Ă̓��e���i�[����Ă��܂��B
+$.MTAppTableConverterを使用した場合、1つのカスタムフィールドに「##」を
+区切り文字として増減したフィールド全ての内容が格納されています。
 
-���̃v���O�C���̓��ʂȃ^�O�͂���܂���̂ŁA�ΏۂƂȂ�v�f��
-Split�v���O�C���ŕ������AMTLoop���g�p���Ĉȉ��̂悤�ɏo�͂��܂��B
+このプラグインの特別なタグはありませんので、対象となる要素を
+Splitプラグインで分割し、MTLoopを使用して以下のように出力します。
 
-�e�[�u���`���ŏo�͂����j
+テーブル形式で出力する例）
 <table>
-<mt:ignore>/* �ΏۂƂ���t�B�[���h���̎w�� */</mt:ignore>
+<mt:ignore>/* 対象とするフィールド名の指定 */</mt:ignore>
 <mt:entryexcerpt split="\n" setvar="rowarray">
 <mt:loop name="rowarray">
 <tr>
@@ -85,30 +85,30 @@ Split�v���O�C���ŕ������AMTLoop���g�p���Ĉȉ��̂悤�ɏo�͂��܂��B
 	<mt:var name="__value__" split="##" setvar="colarray">
 	<mt:loop name="colarray">
 	<mt:var name="__counter__" setvar="colcounter">
-		<mt:ignore>** �e�[�u���̃Z���̏o�͕����A�����ɉ�����class���̎w�� **</mt:ignore>
+		<mt:ignore>** テーブルのセルの出力部分、条件に応じてclass等の指定 **</mt:ignore>
 			<mt:if name="colcounter" eq="1">
 			<th><mt:var name="__value__"></th>
 			<mt:else>
 			<td><mt:var name="__value__"></td>
 			</mt:if>
-		<mt:ignore>** �e�[�u���̃Z���̏o�͕����A�����܂� **</mt:ignore>
+		<mt:ignore>** テーブルのセルの出力部分、ここまで **</mt:ignore>
 	</mt:loop>
 </tr>
 </mt:loop>
 </table>
 
-##$.MTAppEntryAssetsSort�̉摜�̎��o����
+##$.MTAppEntryAssetsSortの画像の取り出し方
 
-$.MTAppEntryAssetsSort���g�p�����ꍇ�AMT�W���̃t�B�[���h�u�^�O�v��
-�摜�̏��Ԃ��u##�v����؂蕶���Ƃ��Ċi�[����܂��B
+$.MTAppEntryAssetsSortを使用した場合、MT標準のフィールド「タグ」に
+画像の順番が「##」を区切り文字として格納されます。
 
-���̃v���O�C���̓��ʂȃ^�O�͂���܂���̂ŁA�ΏۂƂȂ�v�f��
-Split�v���O�C���ŕ������A�ȉ��̂悤�ɏo�͂��܂��B
+このプラグインの特別なタグはありませんので、対象となる要素を
+Splitプラグインで分割し、以下のように出力します。
 
-���ʁj
+共通）
 <MTSetvarTemplate name="setAssetId">
 <MTRemoveBlank>
-<mt:ignore>assetid������</mt:ignore>
+<mt:ignore>assetid初期化</mt:ignore>
 <mt:loop name="array">
 <mt:var name="__counter__" setvar="tmpcnt">
 <mt:setvarblock name="idtmp">assetid<mt:var name="tmpcnt"></mt:setvarblock>
@@ -129,30 +129,30 @@ Split�v���O�C���ŕ������A�ȉ��̂悤�ɏo�͂��܂��B
 <mt:setvar name="$idtmp" value="$valuepar">
 </mt:loop>
 
-<mt:ignore>�摜��I����A�摜���������Ƃ��H�i�����؁j���ɁAempty-asset-list�������Ă��܂����̑΍�</mt:ignore>
+<mt:ignore>画像を選択後、画像を消したとき？（未検証）時に、empty-asset-listが入ってしまう件の対策</mt:ignore>
 <mt:if name="assetid1" eq="empty-asset-list">
 <mt:setvar name="assetid1" value="">
 </mt:if>
 </MTRemoveBlank>
 </MTSetvarTemplate>
 
-1�������o���ꍇ�j
+1枚ずつ取り出す場合）
 <mt:var name="setAssetId">
 <MTAsset id="$assetid1">
 <div>
-<MTInclude module="�摜�\��" width="" height="">
+<MTInclude module="画像表示" width="" height="">
 </div>
 </MTAsset>
 
 
-�S�ďo�͂���ꍇ�j
+全て出力する場合）
 <mt:var name="setAssetId">
 <MTIf name="assetid1">
 <ul class="fancybox">
 <mt:loop name="array">
 <mt:var name="__value__" setvar="valuepar">
 <mt:var name="__counter__" setvar="tmpcnt">
-<MTAsset id="$valuepar"><li<mt:if name="__counter__" op="%" value="4" eq="0"> class="last"</mt:if>><MTInclude module="�摜�\��" width="" height="" square="1"></li></MTAsset>
+<MTAsset id="$valuepar"><li<mt:if name="__counter__" op="%" value="4" eq="0"> class="last"</mt:if>><MTInclude module="画像表示" width="" height="" square="1"></li></MTAsset>
 </mt:loop>
 </ul>
 </MTIf>
