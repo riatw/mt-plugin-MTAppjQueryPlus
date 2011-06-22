@@ -2,7 +2,7 @@
 
 ## はじめに
 
-MTAppjQuerPlusは、「MTAppjQueryプラグイン」を元に独自に拡張をしたjQueryプラグイン集です。
+MTAppjQuerPlusは、「MTAppjQueryプラグイン」を元に独自に拡張をしたjQueryプラグイン集です。  
 MovableTypeをCMSとして運用する際の使い勝手の向上を目的としています。
 
 
@@ -76,26 +76,27 @@ $.MTAppTableConverterを使用した場合、1つのカスタムフィールド�
 Splitプラグインで分割し、MTLoopを使用して以下のように出力します。
 
 テーブル形式で出力する例）
-<table>
-<mt:ignore>/* 対象とするフィールド名の指定 */</mt:ignore>
-<mt:entryexcerpt split="\n" setvar="rowarray">
-<mt:loop name="rowarray">
-<tr>
-<mt:var name="__counter__" setvar="rowcounter">	
-	<mt:var name="__value__" split="##" setvar="colarray">
-	<mt:loop name="colarray">
-	<mt:var name="__counter__" setvar="colcounter">
-		<mt:ignore>** テーブルのセルの出力部分、条件に応じてclass等の指定 **</mt:ignore>
-			<mt:if name="colcounter" eq="1">
-			<th><mt:var name="__value__"></th>
-			<mt:else>
-			<td><mt:var name="__value__"></td>
-			</mt:if>
-		<mt:ignore>** テーブルのセルの出力部分、ここまで **</mt:ignore>
+
+	<table>
+	<mt:ignore>/* 対象とするフィールド名の指定 */</mt:ignore>
+	<mt:entryexcerpt split="\n" setvar="rowarray">
+	<mt:loop name="rowarray">
+	<tr>
+	<mt:var name="__counter__" setvar="rowcounter">	
+		<mt:var name="__value__" split="##" setvar="colarray">
+		<mt:loop name="colarray">
+		<mt:var name="__counter__" setvar="colcounter">
+			<mt:ignore>** テーブルのセルの出力部分、条件に応じてclass等の指定 **</mt:ignore>
+				<mt:if name="colcounter" eq="1">
+				<th><mt:var name="__value__"></th>
+				<mt:else>
+				<td><mt:var name="__value__"></td>
+				</mt:if>
+			<mt:ignore>** テーブルのセルの出力部分、ここまで **</mt:ignore>
+		</mt:loop>
+	</tr>
 	</mt:loop>
-</tr>
-</mt:loop>
-</table>
+	</table>
 
 ##$.MTAppEntryAssetsSortの画像の取り出し方
 
@@ -106,6 +107,7 @@ $.MTAppEntryAssetsSortを使用した場合、MT標準のフィールド「タ�
 Splitプラグインで分割し、以下のように出力します。
 
 共通）
+
 	<MTSetvarTemplate name="setAssetId">
 	<MTRemoveBlank>
 	<mt:ignore>assetid初期化</mt:ignore>
@@ -136,6 +138,7 @@ Splitプラグインで分割し、以下のように出力します。
 	</MTSetvarTemplate>
 
 1枚ずつ取り出す場合）
+
 	<mt:var name="setAssetId">
 	<MTAsset id="$assetid1">
 	<div>
@@ -145,6 +148,7 @@ Splitプラグインで分割し、以下のように出力します。
 
 
 全て出力する場合）
+
 	<mt:var name="setAssetId">
 	<MTIf name="assetid1">
 	<ul class="fancybox">
