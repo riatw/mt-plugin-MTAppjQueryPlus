@@ -106,53 +106,52 @@ $.MTAppEntryAssetsSortを使用した場合、MT標準のフィールド「タ�
 Splitプラグインで分割し、以下のように出力します。
 
 共通）
-<MTSetvarTemplate name="setAssetId">
-<MTRemoveBlank>
-<mt:ignore>assetid初期化</mt:ignore>
-<mt:loop name="array">
-<mt:var name="__counter__" setvar="tmpcnt">
-<mt:setvarblock name="idtmp">assetid<mt:var name="tmpcnt"></mt:setvarblock>
-<mt:setvar name="$idtmp" value="">
-</mt:loop>
-<MTsetVar name="tagvalue" value="">
-<MTsetVar name="array" value="">
+	<MTSetvarTemplate name="setAssetId">
+	<MTRemoveBlank>
+	<mt:ignore>assetid初期化</mt:ignore>
+	<mt:loop name="array">
+	<mt:var name="__counter__" setvar="tmpcnt">
+	<mt:setvarblock name="idtmp">assetid<mt:var name="tmpcnt"></mt:setvarblock>
+	<mt:setvar name="$idtmp" value="">
+	</mt:loop>
+	<MTsetVar name="tagvalue" value="">
+	<MTsetVar name="array" value="">
 
+	<MTEntryTags glue=""><mt:taglabel setvar="tagvalue"></MTEntryTags>
 
-<MTEntryTags glue=""><mt:taglabel setvar="tagvalue"></MTEntryTags>
+	<mt:var name="tagvalue" split="##" setvar="array">
+	<mt:loop name="array">
+	<mt:var name="__value__" setvar="valuepar">
+	<mt:var name="__counter__" setvar="tmpcnt">
 
-<mt:var name="tagvalue" split="##" setvar="array">
-<mt:loop name="array">
-<mt:var name="__value__" setvar="valuepar">
-<mt:var name="__counter__" setvar="tmpcnt">
+	<mt:setvarblock name="idtmp">assetid<mt:var name="tmpcnt"></mt:setvarblock>
+	<mt:setvar name="$idtmp" value="$valuepar">
+	</mt:loop>
 
-<mt:setvarblock name="idtmp">assetid<mt:var name="tmpcnt"></mt:setvarblock>
-<mt:setvar name="$idtmp" value="$valuepar">
-</mt:loop>
-
-<mt:ignore>画像を選択後、画像を消したとき？（未検証）時に、empty-asset-listが入ってしまう件の対策</mt:ignore>
-<mt:if name="assetid1" eq="empty-asset-list">
-<mt:setvar name="assetid1" value="">
-</mt:if>
-</MTRemoveBlank>
-</MTSetvarTemplate>
+	<mt:ignore>画像を選択後、画像を消したとき？（未検証）時に、empty-asset-listが入ってしまう件の対策</mt:ignore>
+	<mt:if name="assetid1" eq="empty-asset-list">
+	<mt:setvar name="assetid1" value="">
+	</mt:if>
+	</MTRemoveBlank>
+	</MTSetvarTemplate>
 
 1枚ずつ取り出す場合）
-<mt:var name="setAssetId">
-<MTAsset id="$assetid1">
-<div>
-<MTInclude module="画像表示" width="" height="">
-</div>
-</MTAsset>
+	<mt:var name="setAssetId">
+	<MTAsset id="$assetid1">
+	<div>
+	<MTInclude module="画像表示" width="" height="">
+	</div>
+	</MTAsset>
 
 
 全て出力する場合）
-<mt:var name="setAssetId">
-<MTIf name="assetid1">
-<ul class="fancybox">
-<mt:loop name="array">
-<mt:var name="__value__" setvar="valuepar">
-<mt:var name="__counter__" setvar="tmpcnt">
-<MTAsset id="$valuepar"><li<mt:if name="__counter__" op="%" value="4" eq="0"> class="last"</mt:if>><MTInclude module="画像表示" width="" height="" square="1"></li></MTAsset>
-</mt:loop>
-</ul>
-</MTIf>
+	<mt:var name="setAssetId">
+	<MTIf name="assetid1">
+	<ul class="fancybox">
+	<mt:loop name="array">
+	<mt:var name="__value__" setvar="valuepar">
+	<mt:var name="__counter__" setvar="tmpcnt">
+	<MTAsset id="$valuepar"><li<mt:if name="__counter__" op="%" value="4" eq="0"> class="last"</mt:if>><MTInclude module="画像表示" width="" height="" square="1"></li></MTAsset>
+	</mt:loop>
+	</ul>
+	</MTIf>
