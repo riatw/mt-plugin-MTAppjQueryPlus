@@ -1,5 +1,4 @@
-﻿# MTAppjQueryPlusドキュメント
-
+# MTAppjQueryPlusドキュメント
 
 ## はじめに
 
