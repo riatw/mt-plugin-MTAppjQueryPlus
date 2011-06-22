@@ -2,7 +2,7 @@
 
 ## はじめに
 
-MTAppjQuerPlusは、「MTAppjQueryプラグイン」を元に独自に拡張をしたjQueryプラグイン集です。  
+MTAppjQuerPlusは、「MTAppjQueryプラグイン[http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html]」を元に独自に拡張をしたjQueryプラグイン集です。  
 MovableTypeをCMSとして運用する際の使い勝手の向上を目的としています。
 
 
@@ -10,12 +10,12 @@ MovableTypeをCMSとして運用する際の使い勝手の向上を目的とし
 
 + MovableType 5.0以降
 + MTAppjQuery最新版がインストールされた環境(単体では動作しません)
-+ Splitプラグインがインストールされた環境
++ Splitプラグイン[http://www.koikikukan.com/archives/2009/01/20-015555.php] がインストールされた環境
 
 
 ## インストール
 
-1. 「MTAppjQueryプラグイン」をインストールします
+1. 「MTAppjQueryプラグイン[http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html]」をインストールします
 2. mt ディレクトリ直下の mt-static/plugins ディレクトリに MTAppjQueryPlus をアップロードします。
 3. user.jsの先頭に以下の記述を追加します
 
@@ -48,13 +48,13 @@ MTAppjQueryPlusは以下の6つの機能で構成されています。
 user.jsに以下の記述をすることで、使用することが可能です。
 必要に応じて、適用する画面をif等で分岐してください。
 
-+ ブログ記事アイテムの並び替え機能
++ ブログ記事アイテムの並び替え機能 
 	$.MTAppEntryAssetsSort();
-+ ファイルのアップロード時のファイル名のバリデート
++ ファイルのアップロード時のファイル名のバリデート  
 	$.MTAppUploadValidater();
-+ ブログ記事の並び替え機能
++ ブログ記事の並び替え機能  
 	$.MTAppEntrySort();
-+ 増減可能なカスタムフィールド
++ 増減可能なカスタムフィールド  
 	$("#excerpt,#customfield_xxx").MTAppTableConverter({  
 		colcnt:2, //列数  
 		type:'text/textarea',  
@@ -133,7 +133,7 @@ Splitプラグインで分割し、以下のように出力します。
 	<mt:setvar name="$idtmp" value="$valuepar">
 	</mt:loop>
 
-	<mt:ignore>画像を選択後、画像を消したとき？（未検証）時に、empty-asset-listが入ってしまう件の対策</mt:ignore>
+	<mt:ignore>画像を選択後、画像を消したとき時に、empty-asset-listが入ってしまうのでクリア</mt:ignore>
 	<mt:if name="assetid1" eq="empty-asset-list">
 	<mt:setvar name="assetid1" value="">
 	</mt:if>
@@ -154,7 +154,7 @@ Splitプラグインで分割し、以下のように出力します。
 
 	<mt:var name="setAssetId">
 	<MTIf name="assetid1">
-	<ul class="fancybox">
+	<ul>
 	<mt:loop name="array">
 	<mt:var name="__value__" setvar="valuepar">
 	<mt:var name="__counter__" setvar="tmpcnt">
