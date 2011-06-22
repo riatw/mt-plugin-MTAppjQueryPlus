@@ -1,4 +1,5 @@
-﻿# MTAppjQueryPlus ドキュメント
+﻿# MTAppjQueryPlusドキュメント
+
 
 ## はじめに
 
@@ -8,9 +9,9 @@ MovableTypeをCMSとして運用する際の使い勝手の向上を目的とし
 
 ## 動作環境
 
-+MovableType 5.0以降
-+MTAppjQuery最新版がインストールされた環境(単体では動作しません)
-+Splitプラグインがインストールされた環境
++ MovableType 5.0以降
++ MTAppjQuery最新版がインストールされた環境(単体では動作しません)
++ Splitプラグインがインストールされた環境
 
 
 ## インストール
